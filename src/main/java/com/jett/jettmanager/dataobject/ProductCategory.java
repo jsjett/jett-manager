@@ -13,7 +13,7 @@ public class ProductCategory {
      * 类目id.
      **/
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer categoryId;
 
     /**
@@ -26,11 +26,11 @@ public class ProductCategory {
      **/
     private Integer categoryType;
 
-    public ProductCategory(){
+    public ProductCategory() {
 
     }
 
-    public ProductCategory(String categoryName,Integer categoryType) {
+    public ProductCategory(String categoryName, Integer categoryType) {
         this.categoryName = categoryName;
         this.categoryType = categoryType;
     }
@@ -58,9 +58,6 @@ public class ProductCategory {
     public void setCategoryType(Integer categoryType) {
         this.categoryType = categoryType;
     }
-
-
-
 
     @Override
     public String toString() {

@@ -27,8 +27,7 @@ public class ProductCategoryRepositoryTest {
 
     @Test
     public void addOneTest(){
-        ProductCategory productCategory = new ProductCategory("老人最爱",2);
-        productCategory.setCategoryId(2);
+        ProductCategory productCategory = new ProductCategory("热销榜",4);
         repository.save(productCategory);
     }
 
