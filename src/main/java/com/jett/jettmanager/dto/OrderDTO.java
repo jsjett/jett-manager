@@ -1,19 +1,12 @@
-package com.jett.jettmanager.dataobject;
+package com.jett.jettmanager.dto;
 
-import com.jett.jettmanager.enums.OrderStatusEnum;
-import com.jett.jettmanager.enums.PayStatusEnum;
+import com.jett.jettmanager.dataobject.OrderDetail;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+
 import java.math.BigDecimal;
+import java.util.List;
 
-@Entity
-public class OrderMaster {
-
-    /**
-     * 订单id
-     */
-    @Id
+public class OrderDTO {
     private String orderId;
     /** 购买用户的名字 **/
     private String buyerName;
@@ -26,9 +19,15 @@ public class OrderMaster {
     /** 订单总金额 **/
     private BigDecimal buyerAmount;
     /** 订单状态，默认0,新下单 **/
-    private Integer orderStatus = OrderStatusEnum.NEW.getCode();
+    private Integer orderStatus;
     /** 订单支付状态，默认0,未支付 **/
-    private Integer payStatus = PayStatusEnum.WAIT.getCode();
+    private Integer payStatus;
+    /** 订单详情列表 */
+    private List<OrderDetail> orderDetailList;
+
+
+
+
 
     public String getOrderId() {
         return orderId;
@@ -92,5 +91,13 @@ public class OrderMaster {
 
     public void setPayStatus(Integer payStatus) {
         this.payStatus = payStatus;
+    }
+
+    public List<OrderDetail> getOrderDetailList() {
+        return orderDetailList;
+    }
+
+    public void setOrderDetailList(List<OrderDetail> orderDetailList) {
+        this.orderDetailList = orderDetailList;
     }
 }

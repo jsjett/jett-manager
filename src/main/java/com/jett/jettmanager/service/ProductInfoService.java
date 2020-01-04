@@ -1,6 +1,7 @@
 package com.jett.jettmanager.service;
 
 import com.jett.jettmanager.dataobject.ProductInfo;
+import com.jett.jettmanager.dto.CartDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -33,4 +34,9 @@ public interface ProductInfoService {
      * @return object
      */
     ProductInfo save(ProductInfo productInfo);
+
+    // 扣库存
+    void decreaseStock(List<CartDTO> cartDTO);
+    // 加库存
+    void increaseStock(List<CartDTO> cartDTO);
 }
